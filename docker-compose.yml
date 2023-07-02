@@ -2,7 +2,7 @@ version: '3'
 services:
   onion:
     build: ./onion_service
-    cpus: 4
+    cpus: 1
     mem_limit: 2g
     volumes:
       - ./onion_service/hidden_service:/var/lib/tor/hidden_service
@@ -13,7 +13,7 @@ services:
 
   captcha:
     build: ./captcha_service
-    cpus: 4
+    cpus: 1
     mem_limit: 1g
     environment:
       - REDIS_HOST=redis
@@ -24,11 +24,11 @@ services:
 
   redis:
     image: redis:latest
-    cpus: 4
-    mem_limit: 5g
+    cpus: 1
+    mem_limit: 2g
 
   tor-proxy:
     restart: always
     image: dockage/tor-privoxy:latest
-    cpus: 2
+    cpus: 1
     mem_limit: 1g
