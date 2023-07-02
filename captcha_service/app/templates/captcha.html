@@ -1,0 +1,27 @@
+<!-- captcha.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Captcha Verification</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .captcha-image {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img class="captcha-image" src="data:image/png;base64,{{captcha_image}}" alt="Captcha Image">
+    <form method="post" action="/validate_captcha/{{session_id}}">
+        <input type="text" name="captcha_text" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

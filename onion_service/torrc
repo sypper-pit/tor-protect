@@ -1,0 +1,4 @@
+HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort 80 captcha:8000
+SocksPort 9050
+SocksListenAddress 0.0.0.0

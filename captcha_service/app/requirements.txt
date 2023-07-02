@@ -1,0 +1,11 @@
+aiohttp
+aiohttp-socks
+fastapi
+fastapi-sessions
+Jinja2
+redis
+captcha
+pydantic
+uvicorn
+python-multipart
+pillow==6.2.2
