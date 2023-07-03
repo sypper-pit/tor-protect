@@ -10,6 +10,7 @@ services:
       - ./onion_service/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - captcha
+    restart: always    
 
   captcha:
     build: ./captcha_service
@@ -21,14 +22,17 @@ services:
     depends_on:
       - redis
       - tor-proxy
+    restart: always
 
   redis:
     image: redis:latest
     cpus: 1
     mem_limit: 2g
+    restart: always
 
   tor-proxy:
     restart: always
     image: dockage/tor-privoxy:latest
     cpus: 1
     mem_limit: 1g
+    restart: always
