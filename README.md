@@ -13,8 +13,11 @@ Docker compouse service for protect you site.
 
 
 # How it work
-hidden_service(user se it) -> main.py(capcha+proxy) -> tor_proxy -> protect_me.cfg(onion site)
-<h3>Your hidden_service and protect_me.cfg <b>must not match!</b></h3>
+hidden_service(user se it) -> main.py(capcha+proxy) -> tor_proxy -> protect_me.cfg(onion site):
+<b>site1.onion</b> ->->-> <b>site2.onion</b>
+
+
+<h3>Your hidden_service and protect_me.cfg must not match!</h3>
 
 donate:
 
