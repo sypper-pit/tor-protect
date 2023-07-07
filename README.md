@@ -1,8 +1,8 @@
 # tor-protect
-It capcha service for protect you onion site
+It capcha service for protect you onion site 
 
 # How to get
-<code>git clone https://github.com/sypper-pit/tor-protect.git</code>
+<code>git clone https://github.com/sypper-pit/tor-protect.git && cd tor-protect</code>
 
 # How to start
 Docker compouse service for protect you site.
