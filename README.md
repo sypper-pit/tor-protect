@@ -6,7 +6,7 @@ Docker compouse service for protect you site.
 2) install docker-compouse
    in ubuntu <code>sudo apt install docker-compose</code>
 3) copy you first host and keys to ./onion_service/hidden_service
-4) edit /captcha_service/app/main.py string 56 <code>async with session.get('http://to_my_non_protect_site.onion/', max_redirects=40, ssl=False, headers=headers) as resp</code> to you site.onion
+4) edit <code>nano captcha_service/app/protect_me.cfg</code> to you onion site 
 
 
 
