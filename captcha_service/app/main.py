@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request, HTTPException, Form, Response
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel
@@ -18,6 +19,7 @@ class CaptchaInput(BaseModel):
 
 app = FastAPI()
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
 image_captcha = ImageCaptcha()
 redis_client = Redis(host='redis', port=6379, db=0)
 
