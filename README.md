@@ -7,7 +7,7 @@ It capcha service for protect you onion site
 # How to start
 Docker compouse service for protect you site.
 1) Install Docker and docker-compouse <code>curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && sudo apt install docker-compose</code>
-2) Copy you first host and keys to ./onion_service/hidden_service
+2) Copy you first host and keys to <code>./onion_service/hidden_service</code>
 3) Edit <code>nano captcha_service/app/protect_me.cfg</code> to you onion site
 4) Run <code>docker-compouse up -d</code>
 
