@@ -58,6 +58,4 @@ async def validate_captcha(session_id: str, response: Response, captcha_text: st
         except aiohttp.client_exceptions.TooManyRedirects:
             raise HTTPException(status_code=400, detail="Too many redirects")
 
-    response.set_cookie(key="session_id", value=session_id)
-
     return HTMLResponse(content=content, status_code=200)
