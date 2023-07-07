@@ -11,6 +11,7 @@ import uuid
 import random
 import io
 import base64
+import configparser
 
 class CaptchaInput(BaseModel):
     captcha_text: str
@@ -26,6 +27,10 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 }
+
+config = configparser.ConfigParser()
+config.read('protect_me.cfg')
+protected_url = config['DEFAULT']['ProtectedURL']
 
 @app.get("/")
 async def read_root(request: Request, response: Response):
@@ -53,7 +58,7 @@ async def validate_captcha(session_id: str, response: Response, captcha_text: st
 
     async with ClientSession(connector=connector) as session:
         try:
-            async with session.get('http://to_my_non_protect_site.onion/', max_redirects=40, ssl=False, headers=headers) as resp:
+            async with session.get(protected_url, max_redirects=40, ssl=False, headers=headers) as resp:
                 content = await resp.text()
         except aiohttp.client_exceptions.TooManyRedirects:
             raise HTTPException(status_code=400, detail="Too many redirects")
