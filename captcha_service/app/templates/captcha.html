@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="mx-auto d-block">
+                <img src="{{ url_for('static', path='/logo.png') }}" alt="Logo" class="mx-auto d-block" style="height:120px;">
                 <img class="captcha-image mx-auto d-block" src="data:image/png;base64,{{captcha_image}}" alt="Captcha Image">
                 <form method="post" action="/validate_captcha/{{session_id}}">
                     <div class="form-group">
