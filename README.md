@@ -1,5 +1,5 @@
 # tor-protect
-It capcha service for protect you onion site 
+It capcha service for anti-DDOS protect you onion site.
 
 # How to get
 <code>git clone https://github.com/sypper-pit/tor-protect.git && cd tor-protect</code>
