@@ -1,6 +1,9 @@
 # tor-protect
 It capcha service for protect you onion site
 
+# How to get
+<code>git clone https://github.com/sypper-pit/tor-protect.git</code>
+
 # How to start
 Docker compouse service for protect you site.
 1) Install Docker and docker-compouse <code>curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && sudo apt install docker-compose</code>
