@@ -1,7 +1,7 @@
 # tor-protect
 It capcha service for protect you onion site
 
-#How to start
+# How to start
 Docker compouse service for protect you site.
 1) Install Docker and docker-compouse <code>curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && sudo apt install docker-compose</code>
 2) Copy you first host and keys to ./onion_service/hidden_service
