@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request, HTTPException, Form, Response
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel
 from redis import Redis
 from captcha.image import ImageCaptcha
@@ -52,7 +52,8 @@ async def validate_captcha(session_id: str, response: Response, captcha_text: st
     if not real_captcha_text:
         raise HTTPException(status_code=400, detail="Invalid session ID")
     if real_captcha_text.decode() != captcha_text:
-        raise HTTPException(status_code=400, detail="Invalid captcha")
+        redis_client.delete(session_id)  # delete the captcha info if it's incorrect
+        return RedirectResponse(url='/', status_code=303)  # redirect back to the captcha page
 
     connector = ProxyConnector.from_url('socks5://tor-proxy:9050', rdns=True)
 
