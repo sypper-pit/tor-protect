@@ -7,7 +7,7 @@ It capcha service for anti-DDOS protect you onion site.
 # How to start
 Docker compouse service for protect you site.
 1) Install Docker and docker-compouse
-   <p><code>curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && sudo apt install docker-compose</code></p>
+   <p><code>curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && sudo apt install -y docker-compose</code></p>
 3) Copy you first host and keys to
    <p><code>./onion_service/hidden_service</code></p>
    ! <b>You external onion site</b> !
